@@ -104,7 +104,7 @@ After we get the Pauli matrices, we can correspondingly get their eigenstates wh
 \end{gather*}
 
 
-\subsection{The Pauli Equation and Spinors}
+\subsection{The Pauli Equation }
 \label{sec: pauli equation}
 
 We can set the electron' wavefunction as 
@@ -141,16 +141,88 @@ Specifically,
 		\BK{S_z}=\hbar (|\phi_1(\pmb{x})|^2-|\phi_2(\pmb{x})|^2)
 \end{gather}
 
+\subsection{Dirac Equation}
+\label{sec: dirac equation}
+
+Well, Pauli's theory about spin is non-relativistic. The task is finished by Paul Dirac with his Relativistic Wave Equation. 
+
+\subsubsection{Klein-Gordon Equation}
+\label{sec: klein gordon equation}
+
+As soon as  Schrodinger equation was proposed, the relativistic wave equation was also put forward. That is Klein-Gordon Equation
+\begin{align*}
+	-\hbar^2 \frac{\partial^2}{\partial t^2}\psi=(-\h^2c^2 \pmb{\nabla}^2+m^2c^4)\psi
+\end{align*}
+
+But this equation can not describe one-single particle, instead it can be used to describe a field--\tcb{scalar field}. The reason mainly comes from the second derivative.  Well let's see the details.\\
+
+For non-relativistic case, we have equation
+\begin{align*}
+	i\hbar \frac{\partial}{\partial t}\psi=-\frac{\hbar^2}{2m}\pmb{\nabla}^2\psi
+\end{align*}
+
+And we can set
+$$\rho=\psi^\star \psi$$
+$$\pmb{j}=-\frac{i\hbar}{2m}(\psi^\star\pmb{\nabla}\psi-\psi \pmb{\nabla}\psi^\star )=\frac{\BK{p}}{m}$$
+
+Then we can get one equation 
+\begin{align*}
+	\boxed{\frac{\partial}{\partial t}\rho+\pmb{\nabla\cdot j}=0}
+\end{align*}
+
+Now, let's prove this, first we have one equation
+\begin{align*}
+	-i\hbar \frac{\partial}{\partial t}\psi^\star=-\frac{\hbar^2}{2m}\pmb{\nabla}^2\psi^\star
+\end{align*}
+
+Then we take 
+\begin{align*}
+	i\hbar \frac{\partial}{\partial t}(\psi^\star \psi)&=i\hbar (\dot{\psi}^\star\psi+\psi^\star \dot{\psi})\\
+	&=\frac{\hbar^2}{2m}\pmb{\nabla}^2 \psi^\star \psi-\frac{\hbar^2}{2m}\psi^\star \pmb{\nabla}^2\psi\\
+	&=\frac{\hbar^2}{2m}\pmb{\nabla}\cdot(\pmb{\nabla}\psi^\star \psi-\psi^\star \pmb{\nabla}\psi)
+\end{align*}
+
+Finally, we can get 
+\begin{gather*}
+	\frac{\partial}{\partial t}(\psi^\star \psi)=-\frac{i \hbar}{2m}\pmb{\nabla}\cdot (\pmb{\nabla}\psi^\star \psi-\psi^\star \pmb{\nabla}\psi)\\
+	\Downarrow\\
+	\frac{\partial}{\partial t}\rho=-\pmb{\nabla}\cdot \pmb{j}
+\end{gather*}
+
+This is actually the conversation of probability. Well but this is not very true for Klein-Gordon Equation. With the same way, we can have 
+\begin{align*}
+	-\hbar^2 \frac{\partial}{\partial t}(\psi^\star \frac{\partial}{\partial t}\psi-\psi \frac{\partial}{\partial t}\psi^\star)=-\hbar^2 c^2 \pmb{\nabla}\cdot(\psi^\star \pmb{\nabla}\psi-\psi \pmb{\nabla}\psi^\star)
+\end{align*}
+
+Now we need to re-set the symbols
+$$\rho=\frac{i\hbar}{2mc^2} (\psi^\star \frac{\partial}{\partial t}\psi-\psi \frac{\partial}{\partial t}\psi^\star)$$
+$$\pmb{j}=-\frac{i\hbar}{2m}(\psi^\star \pmb{\nabla}\psi-\psi \pmb{\nabla}\psi^\star)
+
+We can still get 
+\begin{align*}
+	\frac{\partial}{\partial	t}\rho+\pmb{\nabla}\cdot \pmb{j}=0
+\end{align*}
+
+\tcb{\ti{Well, we still get a equation looks like the conversation of probability equation. But here has some difference. What is the meaning of $\rho$ here, it can't be seen as probability density simply. And it's not always positive. Well this ``minuse probability" problem can't be solved when we treat Klein-Gordon Equation as suitable relativistic wave equation. Then Dirac mentioned an equation named after him.}}
 
 
 
+\subsubsection{Dirac Equation}
 
+Klein-Gordon Equation can be written as 
+\begin{align*}
+	\Big[ (i\h\frac{\partial}{c \partial t} )^2-\sum_1^3 (-i\hbar \frac{\partial}{\partial x_r} )-m_0^2c^2  \Big]\psi(x,y,z,t)=0
+\end{align*}
 
+When there is a field $\vec{A}=(A_0,A_x,A_y,A_z)$, the equation will become 
+\begin{align*}
+	\Big[ (i\h\frac{\partial}{c \partial t} +eA_0)^2-\sum_1^3 (-i\hbar \frac{\partial}{\partial x_r} +eA_r)-m_0^2c^2  \Big]\psi(x,y,z,t)=0
+\end{align*}
 
-
-
-
-
+Well, Dirac think the relativistic wave equation should also be first order differential respect to time. And then he thought the right form should be 
+\begin{align*}
+	\Big[ (i\h\frac{\partial}{c \partial t} +eA_0)-\sum_1^3 \alpha_r(-i\hbar \frac{\partial}{\partial x_r} +eA_r)-\alpha_0m_0^2c^2  \Big]\psi(x,y,z,t)=0
+\end{align*}
 
 
 
