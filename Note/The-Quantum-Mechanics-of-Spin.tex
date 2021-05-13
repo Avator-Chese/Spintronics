@@ -6,7 +6,7 @@
 We have the following relations 
 
 \begin{subequations}
-	\begin{empheq}[box=\fbox]{align}
+	\begin{empheq}[box=\fbox]{gather}
 		\begin{split}
 			& [S_i,S_j ]=\varepsilon_{ijk} i \h S_k\\
 			& S^2\K{s,m}=\h^2 s(s+1)\K{s,m}\\
@@ -154,7 +154,7 @@ As soon as  Schrodinger equation was proposed, the relativistic wave equation wa
 	-\hbar^2 \frac{\partial^2}{\partial t^2}\psi=(-\h^2c^2 \pmb{\nabla}^2+m^2c^4)\psi
 \end{align*}
 
-But this equation can not describe one-single particle, instead it can be used to describe a field--\tcb{scalar field}. The reason mainly comes from the second derivative.  Well let's see the details.\\
+But this equation can not describe one-single particle, instead it can be used to describe a field--\tcb{scalar field}. The reason mainly comes from the second derivative respect to time.  Well let's see the details.\\
 
 For non-relativistic case, we have equation
 \begin{align*}
@@ -196,7 +196,7 @@ This is actually the conversation of probability. Well but this is not very true
 
 Now we need to re-set the symbols
 $$\rho=\frac{i\hbar}{2mc^2} (\psi^\star \frac{\partial}{\partial t}\psi-\psi \frac{\partial}{\partial t}\psi^\star)$$
-$$\pmb{j}=-\frac{i\hbar}{2m}(\psi^\star \pmb{\nabla}\psi-\psi \pmb{\nabla}\psi^\star)
+$$\pmb{j}=-\frac{i\hbar}{2m}(\psi^\star \pmb{\nabla}\psi-\psi \pmb{\nabla}\psi^\star)$$
 
 We can still get 
 \begin{align*}
@@ -211,20 +211,23 @@ We can still get
 
 Klein-Gordon Equation can be written as 
 \begin{align*}
-	\Big[ (i\h\frac{\partial}{c \partial t} )^2-\sum_1^3 (-i\hbar \frac{\partial}{\partial x_r} )-m_0^2c^2  \Big]\psi(x,y,z,t)=0
+	\Big[ (i\h\frac{\partial}{c \partial t} )^2-\sum_1^3 (-i\hbar \frac{\partial}{\partial x_r} )^2-m_0^2c^2  \Big]\psi(x,y,z,t)=0
 \end{align*}
 
 When there is a field $\vec{A}=(A_0,A_x,A_y,A_z)$, the equation will become 
 \begin{align*}
-	\Big[ (i\h\frac{\partial}{c \partial t} +eA_0)^2-\sum_1^3 (-i\hbar \frac{\partial}{\partial x_r} +eA_r)-m_0^2c^2  \Big]\psi(x,y,z,t)=0
+	\Big[ (i\h\frac{\partial}{c \partial t} +eA_0)^2-\sum_1^3 (-i\hbar \frac{\partial}{\partial x_r} +eA_r)^2-m_0^2c^2  \Big]\psi(x,y,z,t)=0
 \end{align*}
 
-Well, Dirac think the relativistic wave equation should also be first order differential respect to time. And then he thought the right form should be 
+Well, Dirac think the relativistic wave equation should also be first order differential respect to time. According to the relativity, time and coordinates have the same status, so the equation should also be first order differential respect to coordinate.  Finally, he thought the right form should be 
 \begin{align*}
 	\Big[ (i\h\frac{\partial}{c \partial t} +eA_0)-\sum_1^3 \alpha_r(-i\hbar \frac{\partial}{\partial x_r} +eA_r)-\alpha_0m_0^2c^2  \Big]\psi(x,y,z,t)=0
 \end{align*}
 
-
+On the other hand, for a free particle we have known
+\begin{align*}
+	E^2=p^2c^2+m_0^2c^2
+\end{align*}
 
 
 

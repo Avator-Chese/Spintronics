@@ -1,9 +1,11 @@
 \documentclass[12pt]{article}
+
+%==========================================
 \usepackage{indentfirst}
 \usepackage{braket}
 \usepackage{color}
 \usepackage{graphicx}
-\usepackage{graphics}
+%\usepackage{graphics}
 \usepackage{subfig}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -14,6 +16,8 @@
 \usepackage{empheq}
 \usepackage{mathtools}
 \usepackage[linkcolor=blue,colorlinks=true,linktoc=all]{hyperref}
+
+%修改方程编号================================
 \makeatletter
 \@addtoreset{equation}{section}
 \makeatother
@@ -32,19 +36,36 @@
 %==============================================
 
 \graphicspath{{Diagrams/}}
+
+%=========================================
 \geometry{a4paper,scale=0.85}
+
+%标题设置==================================
 \title{\includegraphics[scale=0.7]{0.pdf}\\ \Huge{\textbf{Spintronics Note\\}}}
 \author{Guo Liangliang, \href{aoubleliang@gmail.com}{aoubleliang@gmail.com}\\ \\ \href{http://www2.phy.pku.edu.cn/~LabSpin/home.html}{WeiHan Group} of ICQM--Peking University}
 \date{}
+%==========================================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{Handbook of Spintronics}
+\fancyhead[R]{LL-Guo}
+\fancyhead[C]{Wei Han's groupd of ICQM-PKU}
+
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+%==========================================
+
 \begin{document}
 \maketitle
 \newpage
 \tableofcontents
 \newpage
+%=============================================
 
 \include{The-Quantum-Mechanics-of-Spin}
-
-
+\include{Magneto-Electric-Subbands-with-SOI}
+\include{Spin-Torques}
 
 
 
