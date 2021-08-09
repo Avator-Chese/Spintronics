@@ -151,11 +151,11 @@ Where $[H^{||}_{2DEG}]$ is a 2$\times$2 matrix and $[\psi^{||}_{2DEG}(x,y,z)]$ i
 
 
 And then the the Pauli equation taken detailed form becomes
-\begin{align*}
-	&\Big\{\frac{\hbar^2k_x^2}{2m^\star}+\frac{\hbar^2k_y^2}{2m^\star}-\frac{\hbar^2}{2m^\star}\frac{\partial^2}{\partial z^2}+V(z)+eB_yz\frac{\hbar k_x}{m^\star}eB_xz\frac{\hbar k_y}{m^\star}+e^2z^2\frac{B_x^2+B_y^2}{2m^\star}\\-
-	&\frac{g}{2}\mu_B(B_x\sigma_x+B_y\sigma_y)-\frac{\eta_R}{\hbar}[(\hbar k_x+eB_yz)\sigma_y-(\hbar k_y-eB_xz)\sigma_x]\\
+\begin{align}
+	\nonumber &\Big\{\frac{\hbar^2k_x^2}{2m^\star}+\frac{\hbar^2k_y^2}{2m^\star}-\frac{\hbar^2}{2m^\star}\frac{\partial^2}{\partial z^2}+V(z)+eB_yz\frac{\hbar k_x}{m^\star}eB_xz\frac{\hbar k_y}{m^\star}+e^2z^2\frac{B_x^2+B_y^2}{2m^\star}\\-
+	\nonumber &\frac{g}{2}\mu_B(B_x\sigma_x+B_y\sigma_y)-\frac{\eta_R}{\hbar}[(\hbar k_x+eB_yz)\sigma_y-(\hbar k_y-eB_xz)\sigma_x]\\
 	&-\frac{\nu_D}{\hbar^3}p_z^2[(p_x+eB_yz)\sigma_x-(p_y-eB_xz)\sigma_y]\Big\}[\lambda(z)]=E[\lambda(z)]
-\end{align*}
+\end{align}
 
 Where the boundary condition should be 
 \begin{align}
@@ -182,7 +182,76 @@ With
 \end{empheq}
 	
 
- 
+ Then we can get an eigen-equation of $k_x$
+ \begin{align}
+  \begin{bmatrix}
+  		\pmb{0}&\pmb{I}\\
+  		\pmb{A}^{-1}\pmb{C}&\pmb{A}^{-1}B
+  \end{bmatrix} \begin{bmatrix}
+  	\lambda(z)\\ \varsigma(z)
+  \end{bmatrix}=k_x 
+  \begin{bmatrix}
+  	\lambda(z)\\ \varsigma(z)
+  \end{bmatrix}
+\end{align}
+
+The following procedure is to find an analytical result of the eigen-equation. This should use some approximations\\
+
+\tcb{First we assume that
+\begin{align}
+  [\lambda(z)]=\begin{bmatrix}
+  	\lambda_1(z)\\ \lambda_2(z)
+  \end{bmatrix}=\lambda_0(z)\begin{bmatrix}
+  	\alpha \\ \beta
+  \end{bmatrix}
+\end{align}
+\vspace{0.1pt}
+\indent $\lambda_0(z)$is space part while $\alpha,\beta$ are spin parts. This is called "variable separartion" because we assume the spin is not denpendent on space. Then we have
+\begin{align}
+  [\psi^{||}_{2DEG}]=e^{ik_xx}e^{ik_yy}\lambda_0(z)\begin{bmatrix}
+  	\alpha \\ \beta
+  \end{bmatrix}
+\end{align}
+\indent And we can define $\braket{z}$ and without generality, we can let it equal to 0 as following.
+\begin{align}
+  \braket{z}=\int_0^{\infty}\lambda_0(z)z\lambda_0(z)dz=z_0
+\end{align}
+\indent While the second assumation is that we make the width of the 2DEG is so narrow that the subbands are well separated in enrgy. As a result, we can ignore subband mixing(\textcolor{red}{Why?}). With these two approximations, we can get 
+\begin{align}
+  \nonumber E_n&\approx \braket{H^{||}_{2DEG}}=\braket{\psi^{||}_{2DEG}|H_{2DEG}|\psi^{||}_{2DEG}}\\
+  &=\epsilon_n+\frac{\hbar^2(k_x^2+k_y^2)}{2m^\star}-\frac{g}{2}\mu_B[B_x\sigma_x+B_y\sigma_y]-\eta_R[k_x\sigma_y-k_y\sigma_x]-\underbrace{\nu[k_x\sigma_x-k_y\sigma_y]}_{\nu=\nu_D\braket{\partial^2/ \partial z^2}}
+\end{align}
+\begin{align}
+  [-\frac{\hbar^2}{2m^\star}\frac{\partial^2}{\partial z^2}+\frac{e^2z^2(B_x^2+B_z^2)}{2m^\star}]\lambda_0^n{z}=\epsilon_n \lambda_0^n(z)
+\end{align}
+\indent With Pauli matrices, we can get 
+\begin{align}
+ \nonumber E_n [\pmb{I}]&=\overbrace{(\epsilon_n+\frac{\hbar^2(k_x^2+k_y^2)}{2m^\star})}^{\overline{E_n}}[\pmb{I}]-\frac{g}{2}\mu_B\begin{bmatrix}
+  	B_y&B_x\\ B_x& -B_y
+  \end{bmatrix}-\eta_R \begin{bmatrix}
+  	k_x &0 \\ 0& -k_x
+  \end{bmatrix}+......\\
+  &=\begin{bmatrix}
+  	\overline{E_n}-(g/2)\mu_B B_y-\eta_R k_x+\nu k_y & -(g/2)\mu_B B_x +\eta_R k_y -\nu k_x \\
+  	-(g/2)\mu_B B_x +\eta_R k_y -\nu k_x & \overline{E_n}+(g/2)\mu_B B_y+\eta_R k_x-\nu k_y ,p
+  \end{bmatrix}
+\end{align}
+\indent After diagonalization of the upper expression, we can get 
+\begin{align}
+  \boxed{E^{||}_{\pm}=\overline{E_n}\pm \sqrt{(\frac{g}{2}\mu_B B_y+\eta_R k_x-\nu k_y )^2+(\frac{g}{2}\mu_B B_x-\eta_R k_y+\nu k_x )^2}}
+\end{align}
+\indent And the corresponding eigen-states are 
+\begin{empheq}[box=\fbox]{gather*}
+	\psi^{||}_{+}(B_x,B_y,k_x,k_y)=\begin{bmatrix}
+		-\sin(\theta_k)\\ \cos(\theta_k)
+	\end{bmatrix}\\
+	\psi_-^{||}=\begin{bmatrix}
+		\cos(\theta_k)\\ \sin(\theta_k)
+	\end{bmatrix}\\
+	\theta_k=\frac{1}{2}\arctan \Big[\frac{(g/2)\mu_B B_y-\eta_R k_y +\nu k_x}{(g/2)\mu_B B_y+\eta_R k_y -\nu k_x} \Big]
+\end{empheq}
+}
+
 
 
 
